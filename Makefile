@@ -8,4 +8,11 @@ $(PY): $(IPYNB)
 	-(ipython3 nbconvert --to python $(IPYNB) &> $(IPYNB).log && chmod +x $(PY))
 
 clean:
-	rm -f $(PY) $(PY).log $(IPYNB)
+	rm -f $(IPYNB).log
+	rm -f $(PY)
+	rm -f $(PY).log
+	rm -rf __pycache__
+	rm -rf mnist_data
+	rm -rf .ipynb_checkpoints
+
+
